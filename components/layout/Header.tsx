@@ -29,7 +29,7 @@ export default function Header() {
         <div className="container-site flex h-24 items-center justify-between">
           <Link
             href="/"
-            className="flex items-center gap-2 rounded-md bg-white/95 px-2.5 py-1.5 shadow-sm"
+            className="flex items-center gap-2 px-2.5 py-1.5"
             aria-label="PROFF-TIME — на главную"
           >
             <Image

@@ -20,7 +20,7 @@ export default function Contacts({ showHeading = true }: Props) {
           </RevealOnScroll>
         )}
 
-        <div className={`grid gap-10 md:grid-cols-12 md:gap-8 ${showHeading ? "mt-12" : ""}`}>
+        <div className={`grid gap-10 md:grid-cols-12 md:items-start md:gap-8 ${showHeading ? "mt-12" : ""}`}>
           <RevealOnScroll className="md:col-span-4">
             <MapEmbed />
             <div className="mt-8">

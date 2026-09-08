@@ -4,7 +4,7 @@ export default function MapEmbed() {
   const src = `https://www.google.com/maps?q=${encodeURIComponent(CONTACTS.mapEmbedQuery)}&output=embed`;
 
   return (
-    <div className="aspect-[4/3] w-full overflow-hidden border border-line md:aspect-auto md:h-full">
+    <div className="aspect-[4/3] w-full overflow-hidden border border-line">
       <iframe
         src={src}
         title="Карта — адрес PROFF-TIME"

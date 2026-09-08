@@ -46,18 +46,20 @@ export default function ProjectDetailPage({ params }: Params) {
 
       <section className="bg-white py-16 md:py-20">
         <div className="container-site">
-          <RevealOnScroll>
-            <MediaSlot
-              src={project.imagePath}
-              alt={project.imageLabel}
-              variant="light"
-              aspect="aspect-[16/9]"
-              fit="cover"
-              priority
-            />
-          </RevealOnScroll>
+          {project.imagePath && (
+            <RevealOnScroll>
+              <MediaSlot
+                src={project.imagePath}
+                alt={project.imageLabel}
+                variant="light"
+                aspect="aspect-[16/9]"
+                fit="cover"
+                priority
+              />
+            </RevealOnScroll>
+          )}
 
-          <RevealOnScroll delay={100} className="mt-10 max-w-2xl">
+          <RevealOnScroll delay={100} className={`max-w-2xl ${project.imagePath ? "mt-10" : ""}`}>
             <dl className="grid grid-cols-2 gap-6 border-t border-line pt-6 sm:grid-cols-3">
               <div>
                 <dt className="text-xs font-medium tracking-wide2 text-cyan-ink">Категория</dt>

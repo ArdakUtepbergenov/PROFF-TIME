@@ -8,47 +8,60 @@ import CtaBand from "@/components/sections/CtaBand";
 
 export default function ServiceDetail({ service }: { service: Service }) {
   const otherServices = SERVICES.filter((s) => s.id !== service.id);
+  const hasImage = Boolean(service.heroImagePath);
+
+  const textContent = (
+    <>
+      <p className="text-base leading-relaxed text-slate">{service.description}</p>
+      <p className="mt-4 text-base leading-relaxed text-slate">{service.detail}</p>
+
+      <ul className="mt-8 space-y-3 border-t border-line pt-6">
+        {service.features.map((feature) => (
+          <li key={feature} className="flex items-start gap-3 text-sm text-navy">
+            <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-cyan" />
+            {feature}
+          </li>
+        ))}
+      </ul>
+
+      {service.brands && service.brands.length > 0 && (
+        <div className="mt-8 border-t border-line pt-6">
+          <p className="eyebrow mb-3">Материалы и бренды</p>
+          <div className="flex flex-wrap gap-x-6 gap-y-2">
+            {service.brands.map((brand) => (
+              <span key={brand} className="font-display text-base font-semibold text-navy">
+                {brand}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
+    </>
+  );
 
   return (
     <>
       <section className="bg-white py-20 md:py-28">
-        <div className="container-site grid gap-12 md:grid-cols-12 md:gap-8">
-          <RevealOnScroll className="md:col-span-7">
-            <MediaSlot
-              src={service.heroImagePath}
-              alt={service.heroImageLabel}
-              variant="light"
-              aspect="aspect-[4/3]"
-              fit="contain"
-            />
-          </RevealOnScroll>
+        <div className="container-site">
+          {hasImage ? (
+            <div className="grid gap-12 md:grid-cols-12 md:gap-8">
+              <RevealOnScroll className="md:col-span-7">
+                <MediaSlot
+                  src={service.heroImagePath}
+                  alt={service.heroImageLabel}
+                  variant="light"
+                  aspect="aspect-[4/3]"
+                  fit="contain"
+                />
+              </RevealOnScroll>
 
-          <RevealOnScroll delay={100} className="flex flex-col justify-center md:col-span-5">
-            <p className="text-base leading-relaxed text-slate">{service.description}</p>
-            <p className="mt-4 text-base leading-relaxed text-slate">{service.detail}</p>
-
-            <ul className="mt-8 space-y-3 border-t border-line pt-6">
-              {service.features.map((feature) => (
-                <li key={feature} className="flex items-start gap-3 text-sm text-navy">
-                  <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-cyan" />
-                  {feature}
-                </li>
-              ))}
-            </ul>
-
-            {service.brands && service.brands.length > 0 && (
-              <div className="mt-8 border-t border-line pt-6">
-                <p className="eyebrow mb-3">Материалы и бренды</p>
-                <div className="flex flex-wrap gap-x-6 gap-y-2">
-                  {service.brands.map((brand) => (
-                    <span key={brand} className="font-display text-base font-semibold text-navy">
-                      {brand}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            )}
-          </RevealOnScroll>
+              <RevealOnScroll delay={100} className="flex flex-col justify-center md:col-span-5">
+                {textContent}
+              </RevealOnScroll>
+            </div>
+          ) : (
+            <RevealOnScroll className="max-w-2xl">{textContent}</RevealOnScroll>
+          )}
         </div>
       </section>
 
