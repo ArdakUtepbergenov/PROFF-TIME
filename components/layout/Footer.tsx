@@ -16,7 +16,7 @@ export default function Footer() {
     <footer className="bg-ink text-cloud">
       <div className="container-site grid gap-10 py-16 md:grid-cols-[1.1fr_0.9fr_1fr_1fr] md:gap-8 md:py-20">
         <div>
-          <Link href="/" className="inline-flex items-center rounded-md bg-white/95 px-2.5 py-1.5">
+          <Link href="/" className="inline-flex items-center px-2.5 py-1.5">
             <Image
               src="/images/logo.png"
               alt="PROFF-TIME"
