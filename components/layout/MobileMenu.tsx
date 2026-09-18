@@ -49,7 +49,7 @@ export default function MobileMenu({ open, onClose, locale, pathname }: Props) {
       aria-label={dict.header.mobileMenuLabel}
     >
       <div className="container-site flex h-24 items-center justify-between">
-        <span className="inline-flex items-center rounded-md bg-white/95 px-2.5 py-1.5">
+        <span className="inline-flex items-center px-2.5 py-1.5">
           <Image src="/images/logo.png" alt="PROFF-TIME" width={132} height={124} className="h-11 w-auto" />
         </span>
         <button
