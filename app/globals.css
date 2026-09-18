@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-manrope: "Manrope", "Helvetica Neue", Arial, sans-serif;
+  --font-inter: "Inter", "Helvetica Neue", Arial, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  body {
+    @apply bg-white text-navy font-body antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    @apply bg-cyan/30 text-navy;
+  }
+
+  :focus-visible {
+    outline: 2px solid #2fd1d9;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+@layer utilities {
+  .container-site {
+    @apply mx-auto w-full max-w-site px-6 md:px-10 lg:px-16;
+  }
+
+  .eyebrow {
+    @apply text-xs font-medium tracking-wide2 text-cyan;
+  }
+}
