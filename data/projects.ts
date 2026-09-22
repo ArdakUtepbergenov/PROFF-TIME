@@ -104,11 +104,15 @@ export type OtherProjectPhoto = {
   alt: string;
 };
 
-export const OTHER_PROJECTS_GALLERY: OtherProjectPhoto[] = Array.from({ length: 8 }, (_, i) => {
-  const n = String(i + 1).padStart(2, "0");
-  return {
-    filename: `project-${n}.png`,
-    path: `/images/projects/project-${n}.png`,
-    alt: "Реализованный объект PROFF-TIME",
-  };
-});
+export const OTHER_PROJECTS_GALLERY: OtherProjectPhoto[] = Array.from(
+  { length: 18 },
+  (_, i) => {
+    const n = String(i + 1).padStart(2, "0");
+
+    return {
+      filename: `project-${n}.png`,
+      path: `/images/projects/project-${n}.png`,
+      alt: "Реализованный объект PROFF-TIME",
+    };
+  }
+);
