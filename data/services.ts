@@ -69,8 +69,11 @@ export const SERVICES: Service[] = [
     ctaLabel: "Обсудить проект",
     // Подтверждённых фото алюминиевых конструкций в текущих архивах нет —
     // согласно PROFF-TIME_IMAGE_MAP_FINAL.md, остаётся плейсхолдер.
+    
     imageLabel: "Фото: сборка алюминиевой конструкции",
+    imagePath: "/images/catalog/sborka_alum.png",
     heroImageLabel: "Фото: алюминиевая конструкция на объекте",
+    heroImagePath: "/images/catalog/sborka_alum.png",
   },
   {
     id: "lamination",
@@ -145,7 +148,9 @@ export const SERVICES: Service[] = [
     // Подтверждённых фото фасадных объектов в текущих архивах нет —
     // согласно PROFF-TIME_IMAGE_MAP_FINAL.md, остаётся плейсхолдер.
     imageLabel: "Фото: фасадное остекление объекта",
+    imagePath: "/images/catalog/osteklenenie.png",
     heroImageLabel: "Фото: фасадное остекление административного здания",
+    heroImagePath: "/images/catalog/osteklenenie.png",
   },
 ];
 
